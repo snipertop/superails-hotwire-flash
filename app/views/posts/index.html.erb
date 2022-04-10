@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<div id="new_post">
+  <%= render partial: "posts/form", locals: { post: Post.new } %>
+</div>
 
 <h1>Posts</h1>
 
@@ -6,9 +8,10 @@
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%#= link_to "Show this post", post %>
+      <%= button_to "Destroy this post", @post, method: :delete %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%#= link_to "New post", new_post_path %>
